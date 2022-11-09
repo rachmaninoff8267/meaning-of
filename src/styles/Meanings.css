@@ -1,0 +1,14 @@
+.part-of-speech {
+    margin-bottom: 0.35em;
+    color: var(--search-box-focus-border-color);
+}
+
+.meaning:not(:last-child) {
+    margin-bottom: 1.25em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--search-box-focus-border-color);
+}
+
+.example {
+    color: var(--example-text);
+}

@@ -1,0 +1,44 @@
+#meaning-section {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.scrollable-container {
+    position: relative;
+    flex-grow: 2;
+}
+
+.word-container h2 {
+    font-size: 1.65rem;
+}
+
+.word-container h5 {
+    font-size: 1.1rem;
+    margin-top: 0.1em;
+    color: rgb(163, 163, 163);
+}
+
+.word-container {
+    margin-bottom: 0.85em;
+}
+
+.word-meaning-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 0.5em;
+    border: 3px solid var(--search-box-focus-border-color);
+}
+
+.meaning-card {
+    padding: 0.5em;
+    line-height: 1.34;
+    letter-spacing: 0.05ch;
+    width: 100%;
+    margin-bottom: 1em;
+}

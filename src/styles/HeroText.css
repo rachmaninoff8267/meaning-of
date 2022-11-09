@@ -1,0 +1,11 @@
+.hero-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 2;
+}
+
+.hero-container img {
+    display: block;
+    margin: auto;
+}

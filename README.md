@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/meaning-of/">
+    <img src="public/icons8-search-96.png" alt="Logo">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1 align="center">Meaning Of...</h1>
+</p>
 
-## Available Scripts
+An extension that helps you find the definitions of a word.
 
-In the project directory, you can run:
+_(Click on the icon to navigate to the extension)_
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Following is the screenshot of the extension
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   ![Image](public/screenshots/meaning-of-ss.png)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Want to publish your creative extensions on Mozilla AddOns ?
 
-### `npm run build`
+Following are the steps to publish your extensions:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Firstly, your project must include a manifest.json file. Without it, you cannot create any extensions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+{
+    "name": (EXTENSIONS_NAME),
+    "description": (DESCRIBE WHAT YOUR EXTENSION PERFORMS),
+    "version": (PERSONAL PREFERENCE),
+    "manifest_version": 2 (CURRENTLY, MOZILLA USES MANIFEST VERSION 2),
+    "browser_action": {
+        "default_popup": (ROOT HTML FILE),
+        "default_title": (SAME AS IN name),
+        "default_icon": {
+            "48": (ICON SIZE: 48x48 IN PNG),
+            "96": (ICON SIZE: 96x96 IN PNG)
+        }
+    },
+    "icons": [
+        {
+            (SAME AS IN default_icon)
+        }
+    ]
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Then, create your project as usual. Be creative!!
 
-### `npm run eject`
+-   After finishing your project, create a build folder. To create a build folder, you need to use third-party bundlers like webpack or parcel.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   Then, test your extension first by typing _"about:debugging"_ in the Firefox URL bar. Then, go to _This Firefox_ which provides information about the extensions and running workers.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Click on _Load Temporary Add-on…_ which should open a file picker. Navigate to the build folder of the extension, select the index.html and press _Open_.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Image](public/screenshots/load-extension-ss.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   Navigate to [Add-on Developer Hub](https://addons.mozilla.org/en-US/developers) and click on _Submit or manage extensions_. You will be asked to sign in. If you're already signed in, simply click on _Submit a new Add-on_.
 
-## Learn More
+-   After that, we’re asked to decide how we’re going to distribute the extension either on our own or on the Firefox Add-ons Manager.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Image](public/screenshots/add-on-ss.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Next, we’re finally asked to upload the extension. But before we can do that we have to compress all of the contents of the build folder into a ZIP file. After that, we can click on Select a file… and open the freshly compressed file.
 
-### Code Splitting
+![Image](public/screenshots/add-on2-ss.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   In the next step, we’re asked to review the source code submission policy and attach the source code if needed. Since we’ve developed an extension in React and React does minify and generate some additional code we also have to compress and upload the source code.
+    Don’t forget to include instructions on how to build your extension in the README.md file to avoid unnecessary rejections.
 
-### Analyzing the Bundle Size
+-   Lastly, we have to describe the extension we’ve just uploaded. Some information will already be prefilled from manifest.json we created earlier. After filling in all of the required fields, we’re finally ready to submit the extension by clicking on the _Submit version_.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Image](public/screenshots/add-on3-ss.png)

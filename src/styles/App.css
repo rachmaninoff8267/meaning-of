@@ -1,0 +1,18 @@
+main {
+    padding: 1em;
+    background-color: var(--bg-primary);
+    width: 350px;
+    height: 500px;
+    border-radius: 1em;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 1.15rem;
+    margin: 0.65em 0 1.1em 0;
+}

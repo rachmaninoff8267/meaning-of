@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import InputContextProvider from "./components/context/InputContextProvider";
+import Header from "./components/Header";
+import SearchInput from "./components/SearchInput";
+import MainContent from "./components/MainContent";
+import HeroText from "./components/HeroText";
+import "./styles/App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [results, setResults] = useState([]);
+    const [error, setError] = useState(null);
+
+    return (
+        <main>
+            <Header />
+
+            <InputContextProvider
+                results={results}
+                setResults={setResults}
+                error={error}
+                setError={setError}
+            >
+                <SearchInput />
+                {results.length > 0 && !error && <MainContent />}
+            </InputContextProvider>
+
+            {results.length === 0 && <HeroText errorMessage={error} />}
+        </main>
+    );
 }
 
 export default App;

@@ -1,0 +1,17 @@
+#word-search {
+    display: block;
+    width: 100%;
+    outline: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 2px solid var(--search-box-border-color);
+    padding: 0.75em 0.85rem;
+    font-size: 1rem;
+    border-radius: 0.5em;
+    transition: border-color 300ms ease-in-out;
+    margin-bottom: 1.5em;
+}
+
+#word-search:focus {
+    border-color: var(--search-box-focus-border-color);
+}
